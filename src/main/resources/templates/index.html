@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link th:href="@{/css/member.css}" rel="stylesheet" />
+
+<body>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="/member/save" method="post">
+            <h1>Create Account</h1>
+            <input type="text" placeholder="Id" name="memberId">
+            <input type="password" placeholder="Password" name="memberPw">
+            <input type="email" placeholder="Email" name="memberEmail">
+            <input type="text" placeholder="Name" name="memberName">
+            <input type="text" placeholder="Address" name="memberAddress">
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="/member/login" method="post">
+            <h1>Sign In</h1>
+            <input type="text" placeholder="Id" name="memberId">
+            <input type="password" placeholder="Password" name="memberPw">
+            <button type="submit">Sign in</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <button class="ghost" id="signIn">Sign In</button>
+                <a href="/member/"><button class="ghost" id="memberList">Member</button></a>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" th:src="@{/js/member.js}"></script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+    <h1>Member List</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Name</th>
+            <th>Check</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="member: ${memberList}">
+            <td th:text="${member.memberId}"></td>
+            <td th:text="${member.memberEmail}"></td>
+            <td th:text="${member.memberPw}"></td>
+            <td th:text="${member.memberName}"></td>
+            <td>
+                <a th:href="@{|/member/${member.memberId}|}">조회</a>
+            </td>
+            <td>
+                <a th:href="@{|/member/delete/${member.memberId}|}">삭제</a>
+            </td>
+
+        </tr>
+    </table>
+</body>
+</html>
